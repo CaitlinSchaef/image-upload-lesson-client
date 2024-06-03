@@ -59,3 +59,20 @@ export const getImages = ({ auth }) => {
     }
   })
 }
+
+//content type is important here
+export const createImage = ({ title, image, auth }) => {
+  return axios({
+    method: 'post',
+    url: `${baseUrl}/create-image/`,
+    headers: {
+      Authorization: `Bearer ${auth.accessToken}`,
+      'Content-Type': 'multipart/form-data'
+    },
+    data: {
+      image,
+      title,
+    }
+  })
+}
+

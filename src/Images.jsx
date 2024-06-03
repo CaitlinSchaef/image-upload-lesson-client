@@ -19,7 +19,17 @@ const Images = () => {
 
     return (
         <div>
-
+            <hr />
+            <h1>Images</h1>
+            {images && images.map(image => (
+                <div key={image.id}>
+                    <h4>{image.title}</h4>
+                    <img
+                        src={`http://127.0.0.1:8000/${image.image}`}
+                        style={{ width: '50%' }}
+                    />
+                </div>
+            ))}
         </div>
     )
 }
